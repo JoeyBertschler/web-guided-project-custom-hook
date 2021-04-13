@@ -17,6 +17,7 @@ export const useForm = () => {
   const clearForm = e => {
     e.preventDefault();
     setFirstName("");
+    setLastName("");
   };
 
   return [firstName, lastName, handleChanges, handleLastNameChanges, clearForm];
