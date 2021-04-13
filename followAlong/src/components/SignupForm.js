@@ -48,7 +48,7 @@ export default function SignupForm() {
           />
           <TextField
             id="outlined-name"
-            label="First Name"
+            label="Last Name"
             className={classes.textField}
             name="lastName"
             value={lastName}
