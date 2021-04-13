@@ -22,3 +22,5 @@ export const useLocalStorage = (key, initialValue) => {
 // JavaScript objects are data structures specific to the JavaScript programming language. JSON is a text format, universal to all web servers and clients.
 
 // When working with local storage. JSON.stringify your JS objects into a string to store them in local storage. Then JSON.parse the string back into the JavaScript data structure we know and love :)
+
+// tl;dr "stringify on the way in, parse on the way out"
