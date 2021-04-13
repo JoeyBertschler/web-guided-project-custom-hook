@@ -26,7 +26,8 @@ export default function SignupForm() {
   const classes = useStyles();
   const initialValues = {
     firstName: "",
-    lastName: ""
+    lastName: "",
+    email: ""
   }
 
   const [values, handleChanges, clearForm] = useForm(initialValues);
@@ -57,6 +58,16 @@ export default function SignupForm() {
             className={classes.textField}
             name="lastName"
             value={values.lastName}
+            onChange={handleChanges}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Email"
+            className={classes.textField}
+            name="email"
+            value={values.email}
             onChange={handleChanges}
             margin="normal"
             variant="outlined"
