@@ -2,8 +2,12 @@ import { useState } from "react";
 
 
 export const useForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const initialValues = {
+    firstName: "",
+    lastName: ""
+  }
+
+  const [values, setValues] = useState(initialValues);
 
 
   const handleChanges = e => {
