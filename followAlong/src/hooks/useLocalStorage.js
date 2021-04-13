@@ -13,7 +13,12 @@ export const useLocalStorage = (key, initialValue) => {
   // Then, each time we update state, also update localStorage (this means we're going to create our own custom "upgraded" setValue function)
   const setValue = newValue => {
     setStoredValue(newValue);
+    window.localStorage.setItem(key, JSON.stringify(newValue))
   }
 
   return [value, setValue];
 }
+
+// JavaScript objects are data structures specific to the JavaScript programming language. JSON is a text format, universal to all web servers and clients.
+
+// When working with local storage. JSON.stringify your JS objects into a string to store them in local storage. Then JSON.parse the string back into the JavaScript data structure we know and love :)
