@@ -24,15 +24,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignupForm() {
   const classes = useStyles();
-  const [firstName, setFirstName, handleChanges, clearForm] = useForm("");
-
+  const [firstName, handleChanges, clearForm] = useForm("");
 
   const handleSubmit = e => {
     e.preventDefault();
     alert(firstName);
   };
-
-  
 
   return (
     <div p={2} className="form">
