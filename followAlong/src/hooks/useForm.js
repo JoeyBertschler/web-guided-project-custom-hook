@@ -9,13 +9,11 @@ export const useForm = () => {
 
   const [values, setValues] = useState(initialValues);
 
-
   const handleChanges = e => {
-    setFirstName(e.target.value);
-  };
-
-  const handleLastNameChanges = e => {
-    setLastName(e.target.value);
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value
+    });
   };
 
   const clearForm = e => {
