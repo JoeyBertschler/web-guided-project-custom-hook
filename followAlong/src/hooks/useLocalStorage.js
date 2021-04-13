@@ -4,7 +4,9 @@ import { useState } from "react";
 export const useLocalStorage = (key, initialValue) => {
   // If the values are in localStorage already, use them to initialize our useState call
   const [value, setValue] = useState(() => {
-    if (window.localStorage.getItem(key))
+    if (window.localStorage.getItem(key)) {
+      return JSON.parse(window.localStorage.getItem(key)); // parse the string saved in local storage back into a JavaScript object
+    }
     return initialValue;
   });
 
