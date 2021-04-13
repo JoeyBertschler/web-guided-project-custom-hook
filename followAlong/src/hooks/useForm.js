@@ -1,7 +1,7 @@
 import { useLocalStorage } from "./useLocalStorage";
 
 export const useForm = (initialValues) => {
-  const [values, setValues] = useForm(initialValues);
+  const [values, setValues] = useLocalStorage(initialValues);
 
   const handleChanges = e => {
     setValues({
