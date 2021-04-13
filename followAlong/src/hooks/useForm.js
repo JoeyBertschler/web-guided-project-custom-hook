@@ -10,6 +10,7 @@ export const useForm = () => {
   const [values, setValues] = useState(initialValues);
 
   const handleChanges = e => {
+    console.log("You are editing this field:", e.target.name);
     setValues({
       ...values,
       [e.target.name]: e.target.value
@@ -22,7 +23,7 @@ export const useForm = () => {
     setLastName("");
   };
 
-  return [firstName, lastName, handleChanges, handleLastNameChanges, clearForm];
+  return [values, handleChanges, clearForm];
 }
 
 // We can define any return format we like. Using an array and dereferencing each attribute on the component side is a stylistic choice, which many developers like because it reminds us of the built-in hooks. Do it however you like, but just make sure that your returns here match the dereferencing in your component! It's easy to get out of sync while working on custom hooks :D
