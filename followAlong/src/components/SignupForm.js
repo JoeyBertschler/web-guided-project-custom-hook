@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from "../hooks/useForm";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
@@ -23,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignupForm() {
   const classes = useStyles();
-  const [firstName, setFirstName] = useState("");
+  const [firstName, setFirstName] = useForm("");
 
   const handleChanges = e => {
     setFirstName(e.target.value);
