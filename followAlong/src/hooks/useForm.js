@@ -10,7 +10,6 @@ export const useForm = () => {
   const [values, setValues] = useState(initialValues);
 
   const handleChanges = e => {
-    console.log("You are editing this field:", e.target.name);
     setValues({
       ...values,
       [e.target.name]: e.target.value
