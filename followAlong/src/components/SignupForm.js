@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignupForm() {
   const classes = useStyles();
-  const [firstName, lastName, handleChanges, handleLastNameChanges, clearForm] = useForm("");
+  const [values, handleChanges, clearForm] = useForm();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -41,7 +41,7 @@ export default function SignupForm() {
             label="First Name"
             className={classes.textField}
             name="firstName"
-            value={firstName}
+            value={values.firstName}
             onChange={handleChanges}
             margin="normal"
             variant="outlined"
@@ -51,8 +51,8 @@ export default function SignupForm() {
             label="Last Name"
             className={classes.textField}
             name="lastName"
-            value={lastName}
-            onChange={handleLastNameChanges}
+            value={values.lastName}
+            onChange={handleChanges}
             margin="normal"
             variant="outlined"
           />
