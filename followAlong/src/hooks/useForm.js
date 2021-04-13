@@ -1,12 +1,7 @@
 import { useState } from "react";
 
 
-export const useForm = () => {
-  const initialValues = {
-    firstName: "",
-    lastName: ""
-  }
-
+export const useForm = (initialValues) => {
   const [values, setValues] = useState(initialValues);
 
   const handleChanges = e => {
