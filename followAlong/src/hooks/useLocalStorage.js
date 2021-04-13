@@ -3,7 +3,7 @@ import { useState } from "react";
 // An upgraded version of useState, with the same interface but the added functionality of reading to / writing from localStorage
 export const useLocalStorage = (key, initialValue) => {
   // If the values are in localStorage already, use them to initialize our useState call
-  const [value, setValue] = useState(() => {
+  const [value, setStoredValue] = useState(() => {
     if (window.localStorage.getItem(key)) {
       return JSON.parse(window.localStorage.getItem(key)); // parse the string saved in local storage back into a JavaScript object
     }
@@ -11,5 +11,9 @@ export const useLocalStorage = (key, initialValue) => {
   });
 
   // Then, each time we update state, also update localStorage (this means we're going to create our own custom "upgraded" setValue function)
+  const setValue = newValue => {
+    setStoredValue(newValue);
+  }
+
   return [value, setValue];
 }
